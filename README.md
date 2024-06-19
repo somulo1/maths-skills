@@ -1,4 +1,4 @@
-# Data Analysis Project
+# Math-skills
 
 This project aims to analyze a group of integers stored in a text file (.txt). It calculates the mean, median, variance, and standard deviation of the integers.
 
