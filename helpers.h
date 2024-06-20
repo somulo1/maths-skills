@@ -1,9 +1,11 @@
-// helpers.h
 #ifndef HELPERS_H
 #define HELPERS_H
 
-#define MAX_SIZE 5000
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
+#define MAX_SIZE 5000
 
 struct IntArray {
     int *arr;

@@ -7,22 +7,22 @@ This project aims to analyze a group of integers stored in a text file (.txt). I
 Compile the project using a C compiler, such as GCC:
 
 # Compilation
-
+make file is available for compiling the project files.copy and run the command below.
 ```shell
-gcc -c main.c file_reader.c mean.c median.c standard_deviation.c variance.c compare.c
-gcc -o main main.o file_reader.o mean.o median.o standard_deviation.o variance.o compare.o -lm
+make
 ```
 
 # Run code
 
 ```shell
-./main data.txt
+./main_executable data.txt
+
 ```
 
 # Clean
 
 ```shell
-rm main test_main main.o test_main.o file_reader.o mean.o median.o standard_deviation.o variance.o compare.o
+make clean
 ```
 
 # Files
@@ -38,14 +38,13 @@ helpers.h: Header file containing function prototypes and necessary includes.
 # Test
 
 ```shell
-gcc -c test_main.c file_reader.c mean.c median.c standard_deviation.c variance.c compare.c
-gcc -o test_main test_main.o file_reader.o mean.o median.o standard_deviation.o variance.o compare.o -lm
+./test_executable
 ```
 
 # Run tests
 
 ```shell
-./test_main
+./test_file
 ```
 
 ## Test cases: 
