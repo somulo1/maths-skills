@@ -25,10 +25,10 @@ int main(int argc, char **argv) {
     double variance = Calculate_variance(data, n);
     double standard_deviation = Calculate_standard_deviation(variance);  // Calculate standard deviation
 
-    printf("Average: %.2f\n", mean);
-    printf("Median: %.2f\n", median);
-    printf("Variance: %.2f\n", variance);
-    printf("Standard Deviation: %.2f\n", standard_deviation);
+    printf("Average: %.0f\n", mean);
+    printf("Median: %.0f\n", median);
+    printf("Variance: %.0f\n", variance);
+    printf("Standard Deviation: %.0f\n", standard_deviation);
 
     free(data);  // Free allocated memory
 
