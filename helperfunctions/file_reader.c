@@ -1,6 +1,8 @@
 #include "helpers.h"
 #include <stdlib.h>
 #include <math.h>
+#include <inttypes.h> // for int64_t
+#include <limits.h>   // for INT64_MAX and INT64_MIN
 
 // Function to append an integer value to IntArray
 struct IntArray appendInt(struct IntArray array, int value) {
@@ -44,8 +46,20 @@ int Read_data_from_file(const char *file_path, struct IntArray *data) {
     while (fscanf(file, "%lf", &dnum) == 1) {
         num = (int)dnum; // Truncate double to int for simplicity
         if (dnum == (double)num) {
+            // Check for overflow in 64-bit signed integer range
+            if (num > INT64_MAX || num < INT64_MIN) {
+                printf("Error: Integer value exceeds 64-bit signed integer range: %" PRId64 "\n", (int64_t)num);
+                fclose(file);
+                return -1;
+            }
             arr = appendInt(arr, num);
         } else {
+            // Check for overflow in 64-bit signed integer range
+            if (dnum > (double)INT64_MAX || dnum < (double)INT64_MIN) {
+                printf("Error: the intager value exceeds 64-bit signed integer range: %.0f\n", dnum);
+                fclose(file);
+                return -1;
+            }
             arr = appendDouble(arr, dnum);
         }
         i++;
@@ -54,11 +68,13 @@ int Read_data_from_file(const char *file_path, struct IntArray *data) {
     if (!feof(file)) {
         // fscanf failed to read a number
         printf("Error reading number from file. Correct the file format.\n");
+        fclose(file);
         return -1;
     }
 
     if (arr.size == 0) {
         printf("File didn't contain any numbers.\n");
+        fclose(file);
         return -1;
     }
 
