@@ -1,3 +1,5 @@
+// call all the functions read and carry out calculations based on data read from data.txt
+// truncate the result to the nearest intagers
 #include <stdio.h>
 #include "helpers.h"
 
