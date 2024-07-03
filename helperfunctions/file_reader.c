@@ -48,15 +48,15 @@ int Read_data_from_file(const char *file_path, struct IntArray *data) {
         if (dnum == (double)num) {
             // Check for overflow in 64-bit signed integer range
             if (num > INT64_MAX || num < INT64_MIN) {
-                printf("Error: Integer value exceeds 64-bit signed integer range" );
+                printf("Error: Integer value exceeds 64-bit signed integer range. It is an overflow" );
                 fclose(file);
-                return -1;
+                return 0;
             }
             arr = appendInt(arr, num);
         } else {
             // Check for overflow in 64-bit signed integer range
             if (dnum > (double)INT64_MAX || dnum < (double)INT64_MIN) {
-                printf("Error: Integer value exceeds 64-bit signed integer range");
+                printf("Error: Integer value exceeds 64-bit signed integer range. I t is an overflow");
                 fclose(file);
                 return -1;
             }
@@ -69,13 +69,13 @@ int Read_data_from_file(const char *file_path, struct IntArray *data) {
         // fscanf failed to read a number
         printf("Error reading number from file. Correct the file format.\n");
         fclose(file);
-        return -1;
+        return 0;
     }
 
     if (arr.size == 0) {
         printf("The file is empty.\n");
         fclose(file);
-        return -1;
+        return 0;
     }
 
     fclose(file);
