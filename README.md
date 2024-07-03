@@ -1,63 +1,56 @@
-# Math-skills
+# Math Skills
 
 This project aims to analyze a group of integers stored in a text file (.txt). It calculates the mean, median, variance, and standard deviation of the integers.
 
 ## Usage
 
-Compile the project using a C compiler, such as GCC:
+To compile the project using a C compiler (e.g., GCC), follow these steps:
 
-# Compilation
-make file is available for compiling the project files.copy and run the command below.
+## Compilation
+
+A `makefile` is available for compiling the project files. Copy and run the command below:
+
 ```shell
 make
 ```
 
-# Run code
+## Running the Code
+
+After compilation, execute the main executable with the data file data.txt:
 
 ```shell
+
 ./main_executable data.txt
-
 ```
+### Cleaning Up
 
-# Clean
+To clean up and remove the executable files, use:
 
-```shell
+``` shell
+
 make clean
 ```
+Project Files
 
-# Files
-   This project has test_file, main.c, helper.c, data.txt and makefile
+This project includes the following files:
 
-* main.c: The main file responsible for reading the data file and calling the other functions from the helperfunctions directory and display the result
+    main.c: Main file responsible for reading the data file and calling other functions from the helper functions directory to display the results.
+    makefile: Helps in compiling all files into executable format and can be used to clean executable files after obtaining results.
+    mean.c: Function to calculate the average of the data.
+    median.c: Function to calculate the median of the data.
+    variance.c: Function to calculate the variance of the data.
+    standard_deviation.c: Function to calculate the standard deviation of the data.
+    helpers.h: Header file containing function prototypes and necessary includes.
+    file_reader.c: Reads data from the provided data file and defines the type to be used across all functions.
+    compare.c: Used to sort data in ascending order.
 
-* makefile - helps in compiling all the files into executable format. it can be used to clear the executable files after obtaining the result.
+`Note:` Run make every time you modify the functions to obtain correct results.
+Test Cases
 
- *NB*-  RUN make every time yu modify the functions to obtain the correct result.
+This project includes various test cases to ensure functionality across different scenarios.
+## Author
 
- ## functions.
+This work is solely done by `Samuel Omulo`. Feel free to visit the following accounts for more details
 
-* mean.c: Contains the function to calculate the avarage of the data.
-* median.c: Contains the function to calculate the median of the data.
-* variance.c: Contains the function to calculate the variance of the data.
-* standard_deviation.c: Contains the function to calculate the standard deviation of the data.
-* helpers.h: Header file containing function prototypes and necessary includes.
-* file_reader.c : reads data from a provided data file and defines the the type to be used accross every function
-* compare.c : is used to sort data in an accending order .
-
-remeber to incude the sampled data in a text file
-
-
-# Run test file
-
-```shell
-./test_executable
-```
-
-
-## Test cases: 
-this project takes all the possible test casses      
-##  Author
-this work is solely done by *samuel omulo* feel free to visit the following account
-  [gitea account](https://learn.zone01kisumu.ke/git/somulo/math-skills.git)  or [github account](https://github.com/somulo1)
+  [gitea](https://learn.zone01kisumu.ke/git/somulo/math-skills.git)   or    [github](https://github.com/somulo1)
  
-
