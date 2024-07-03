@@ -11,9 +11,9 @@ int validate_mean(double mean) {
     // Round the mean to the nearest integer
     double rounded_mean = round(mean);
 
-    if (fabs(mean - rounded_mean) > 0.5) { // Tolerance of 0.5 for rounding to nearest integer
-        printf("Mean validation failed: Calculated mean is %.f, which is not close to an integer.\n", mean);
-        return 0;
+    if (!(fabs(mean = rounded_mean) ) ){ // Tolerance of 0.5 for rounding to nearest integer
+        printf("Mean validation failed: Calculated mean is %.f, \n", mean);
+        return -1;
     }
     return 1;
 }
@@ -96,6 +96,7 @@ int main() {
     }
 
     // Print test results
+    
     free(data); // Free allocated memory
 
     printf("PASS. OK\n");
